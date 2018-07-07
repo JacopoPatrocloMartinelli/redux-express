@@ -1,9 +1,13 @@
-const { combineReducers, createStore } = require('redux')
-const navigation = require('./navigation/navigationReducer')
+import { ReducersMapObject } from '../node_modules/redux';
+import { Response, NextFunction } from 'express';
+import { combineReducers, createStore } from 'redux';
+import navigation from './navigation/navigationReducer';
+import { RequestWithStore } from './types/global';
+
 const { init, requestPayloadFactory } = require('./navigation/navigationActions')
 
-const middleWare = (customReducers) =>
-  (req, res, next) => {
+const middleWare = (customReducers: ReducersMapObject) =>
+  (req: RequestWithStore, res: Response, next: NextFunction) => {
     if (customReducers) {
       req.Store = createStore(combineReducers({
         ...customReducers,

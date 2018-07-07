@@ -1,3 +1,3 @@
-const Core = require('./src/index')
+const Core = require('./dist/index')
 
 module.exports = Core.middleWare

@@ -1,10 +1,11 @@
 {
-  "name": "redex",
-  "version": "1.0.0",
+  "name": "redux-express",
+  "version": "1.0.1",
   "description": "Implementazione per risolvere la separation of consern utilizzando il pattern middleware di express",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "build": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,11 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.16.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "node-mocks-http": "^1.7.0"
+    "node-mocks-http": "^1.7.0",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2"
   }
 }
